@@ -14,19 +14,24 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
 public class RNAppsFlyerPackage implements ReactPackage {
-    private Application application;
+  private Application application;
 
-    public RNAppsFlyerPackage(Application application) {
-        this.application = application;
-    }
+  public RNAppsFlyerPackage(Application application) {
+    this.application = application;
+  }
 
-    @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNAppsFlyerModule(reactContext, this.application));
-    }
+  @Override
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+    return Arrays.<NativeModule>asList(new RNAppsFlyerModule(reactContext, this.application));
+  }
 
-    @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-      return Collections.emptyList();
-    }
+  @Override
+  public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public List<Class<? extends JavaScriptModule>> createJSModules() {
+    return Collections.emptyList();
+  }
 }
